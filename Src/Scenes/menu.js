@@ -42,7 +42,7 @@ class Menu extends Phaser.Scene {
         });
 
         // Add hitbox for play button
-        let playButtonHitbox = this.add.rectangle(392, 429, 310, 160, "#FFF", 0.5).setOrigin(0);
+        let playButtonHitbox = this.add.rectangle(392, 429, 310, 160, "#FFF", 0).setOrigin(0);
         playButtonHitbox.setInteractive();
         playButtonHitbox.on("pointerdown", () => {
             this.scene.start("load");
