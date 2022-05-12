@@ -40,5 +40,12 @@ class Menu extends Phaser.Scene {
             repeat: -1,
             ease: 'Sinusoidal',
         });
+
+        // Add hitbox for play button
+        let playButtonHitbox = this.add.rectangle(392, 429, 310, 160, "#FFF", 0).setOrigin(0);
+        playButtonHitbox.setInteractive();
+        playButtonHitbox.on("pointerdown", () => {
+            this.scene.start("load");
+        });
     }
 }

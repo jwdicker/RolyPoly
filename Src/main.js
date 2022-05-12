@@ -1,4 +1,3 @@
-
 class Playground extends Phaser.Scene {
     constructor() {
         super("playground");
@@ -41,10 +40,11 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: false
-        }
-    }
-};
+            gravity: { y: 100 },
+            debug: true
+        } 
+}
+}
 
 // define game canvas
 let game = new Phaser.Game(config);
