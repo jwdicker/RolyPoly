@@ -19,6 +19,6 @@ class Level1 extends Phaser.Scene
             },
             fixedWidth: 0
         }
-        this.add.text(game.config.width/2, game.config.height/2, 'Watch out for slugs' +  this.game.config.highScore, menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2, 'Watch out for slugs', menuConfig).setOrigin(0.5);
     }
 }
