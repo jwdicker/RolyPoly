@@ -8,6 +8,8 @@ class Menu extends Phaser.Scene {
         this.load.image('rolypoly', 'assets/rolypoly.png');
     }
     create() {
+        console.log("menu");
+
         // Add background
         this.add.image(0, 0, 'mainmenu').setOrigin(0, 0);
 
