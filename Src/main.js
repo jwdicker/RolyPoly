@@ -4,8 +4,15 @@ let config = {
     height: 768,
     scene: [ Menu, Load, Play, EndScreen ],
     highscore: 0,
-    currentScore: 0
-};
+    currentScore: 0,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 100 },
+            debug: true
+        } 
+}
+}
 
 // define game canvas
 let game = new Phaser.Game(config);
