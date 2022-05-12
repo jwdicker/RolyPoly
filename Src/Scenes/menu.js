@@ -10,6 +10,8 @@ class Menu extends Phaser.Scene {
         this.load.image('circIcon', '/assets/circ_icon.png');
     }
     create() {
+        console.log("menu");
+
         // Add background
         this.add.image(0, 0, 'mainmenu').setOrigin(0, 0);
 
@@ -56,6 +58,13 @@ class Menu extends Phaser.Scene {
             yoyo: true,
             repeat: -1,
             ease: 'Sinusoidal',
+        });
+
+        // Add hitbox for play button
+        let playButtonHitbox = this.add.rectangle(392, 429, 310, 160, "#FFF", 0).setOrigin(0);
+        playButtonHitbox.setInteractive();
+        playButtonHitbox.on("pointerdown", () => {
+            this.scene.start("play");
         });
     }
 }
