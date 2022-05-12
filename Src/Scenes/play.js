@@ -2,16 +2,30 @@ class Play extends Phaser.Scene {
     constructor() {
         super("play");
     }
+
     preload(){
-        this.load.image('player', 'Assets/rolypoly.png');
+        this.load.image("player", "Assets/rolypoly.png");
+        this.load.image("slug", "Assets/slug.png");
     }
+
     create(){
-        this.rolly = this.physics.add.sprite(0, 0, 'player');
-        this.rolly.
-        this.physics.add.existing(this.add.rectangle(game.config.width / 2, game.config.height / 2, 100, 100, 0xffffff))
-        .setImmovable();
-    }
-    update(){
+        this.player = this.physics.add.sprite(8,0,'player').setOrigin(0,0).setCollideWorldBounds();
+
+        this.player.setGravityY(1);
+        this.player.setVelocityY(4000);
+        this.player.setVelocityX(100);
+
+        this.slug1 =  this.physics.add.sprite(1000,600,'slug').setOrigin(0,0).setCollideWorldBounds();
+        this.player.setGravityY(1);
+        this.player.setVelocityY(4000);
+        this.player.setVelocityX(-100);
+
+
+        this.physics.add.collider(this.slug1, this.player);
         
+
     }
+    //this.ground = this.physics.add.group({immovable: true});
+    
+
 }
