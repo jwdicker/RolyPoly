@@ -18,7 +18,7 @@ class Level2 extends Phaser.Scene
             },
             fixedWidth: 0
         }
-        this.text = this.add.text(game.config.width/2, game.config.height/2, "That's good work!", textConfig);
-        this.text = this.add.text(game.config.width/2, game.config.height/2, "Watch out for snails!", textConfig);
+        this.text = this.add.text(game.config.width/2, game.config.height/2, "That's good work!", textConfig).setOrigin(0.5);;
+        this.text = this.add.text(game.config.width/2, game.config.height/2, "Watch out for snails!", textConfig).setOrigin(0.5);;
     }
 }
