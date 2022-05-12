@@ -1,8 +1,10 @@
 class Victory extends Phaser.Scene 
 {
-    constructor() {
+    constructor() 
+    {
         super("VictoryScene");
-        create()
+    }
+    create()
         {
             this.textConfig = {
                 fontFamily: 'Georgia',
@@ -23,5 +25,4 @@ class Victory extends Phaser.Scene
                 this.play("Level1Scene");
             });
         }
-    }
 }
