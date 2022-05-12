@@ -7,6 +7,7 @@ class Play extends Phaser.Scene {
     }
     create(){
         this.physics.add.sprite(0, 0, 'player');
+        this.physics.add.rectangle(100, 100, 1000, 100, 0xffffff);
     }
     update(){
         

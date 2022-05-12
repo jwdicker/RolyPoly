@@ -3,7 +3,7 @@ let config = {
     width: 1080,
     height: 720,
     autoCenter: true,
-    scene: [Play, Menu, Load, EndScreen ],
+    scene: [Load, Menu, Play, EndScreen ],
     highscore: 0,
     currentScore: 0,
     physics: {
