@@ -22,7 +22,7 @@ class Menu extends Phaser.Scene {
         this.rolypoly = this.add.sprite(890, 500, 'rolypoly').setOrigin(0.5, 0.5);
 
         //Add touch screen icon
-        this.circ = this.add.sprite(385, 350, 'circIcon').setOrigin(0, 0).setScale(.4);
+        this.circ = this.add.sprite(540, 500, 'circIcon').setOrigin(0.5, 0.5).setScale(.4);
         this.circ.alpha = 0.4;
         this.hand = this.add.sprite(580, 550, 'handIcon').setOrigin(0, 0).setScale(.4);
 
