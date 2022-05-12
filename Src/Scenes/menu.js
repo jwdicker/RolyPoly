@@ -6,8 +6,12 @@ class Menu extends Phaser.Scene {
         this.load.image('mainmenu', 'assets/mainmenu.png');
         this.load.image('snail', 'assets/snail.png');
         this.load.image('rolypoly', 'assets/rolypoly.png');
+        this.load.image('handIcon', '/assets/hand_c.png');
+        this.load.image('circIcon', '/assets/circ_icon.png');
     }
     create() {
+        console.log("menu");
+
         // Add background
         this.add.image(0, 0, 'mainmenu').setOrigin(0, 0);
 
@@ -16,6 +20,21 @@ class Menu extends Phaser.Scene {
 
         // Add roly poly sprite
         this.rolypoly = this.add.sprite(890, 500, 'rolypoly').setOrigin(0.5, 0.5);
+
+        //Add touch screen icon
+        this.circ = this.add.sprite(385, 350, 'circIcon').setOrigin(0, 0).setScale(.4);
+        this.circ.alpha = 0.4;
+        this.hand = this.add.sprite(580, 550, 'handIcon').setOrigin(0, 0).setScale(.4);
+
+        //Add tween for touch icon
+        this.add.tween({
+            targets: [this.circ],
+            duration: 450,
+            scale: 0.5,
+            yoyo: true,
+            repeat: -1,
+            ease: 'Sinusoidal'
+        })
 
         // Add tween for snail
         this.add.tween({
@@ -45,7 +64,7 @@ class Menu extends Phaser.Scene {
         let playButtonHitbox = this.add.rectangle(392, 429, 310, 160, "#FFF", 0).setOrigin(0);
         playButtonHitbox.setInteractive();
         playButtonHitbox.on("pointerdown", () => {
-            this.scene.start("load");
+            this.scene.start("play");
         });
     }
 }
