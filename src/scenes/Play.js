@@ -4,7 +4,7 @@ class Play extends Phaser.Scene {
     }
 
     create(){
-        this.background = this.add.tileSprite(0, 0, game.config.width, game.config.height, "background").setOrigin(0);
+        this.background = this.add.image(0, 0, "background").setOrigin(0);
 
         this.isJumping = false;
         this.player = this.physics.add.sprite(8,game.config.height - 200,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
