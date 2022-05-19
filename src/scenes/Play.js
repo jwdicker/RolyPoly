@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
     preload(){
         this.load.image("player", "Assets/rolypoly.png");
         this.load.image("slug", "Assets/slug.png");
-        this.add.spritesheet('poly_anim', '/assets/rolypoly_animated.png', 
+        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', 
         { frameWidth: 85, frameHeight: 70});
     }
 
@@ -22,6 +22,7 @@ class Play extends Phaser.Scene {
         this.slug1.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.slug1.setVelocityX(-100);
+        
         
         this.physics.add.collider(this.slug1, this.player, () => {
             console.log("hit");
