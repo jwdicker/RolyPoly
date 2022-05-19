@@ -12,9 +12,10 @@ class Load extends Phaser.Scene {
         this.load.image('circIcon', '/assets/circ_icon.png');
 
         // Play scene
-        this.load.image("player", "Assets/rolypoly.png");
-        this.load.image("slug", "Assets/slug.png");
+        this.load.image("player", "assets/rolypoly.png");
+        this.load.image("slug", "assets/slug.png");
         this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', {frameWidth: 85, frameHeight: 70, startFrame: 0, endFrame: 11});
+        this.load.image("background", "assets/background.png");
 
         // End scene
         this.load.image('victoryscreen', 'assets/victory.png');
