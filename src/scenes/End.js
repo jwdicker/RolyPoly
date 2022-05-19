@@ -1,4 +1,4 @@
-class EndScreen extends Phaser.Scene {
+class End extends Phaser.Scene {
     constructor() {
         super("end");
     }
