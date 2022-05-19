@@ -14,12 +14,15 @@ class Play extends Phaser.Scene {
         //this.player.setVelocityY(4000);
         this.player.setVelocityX(100);
 
-        this.slug1 =  this.physics.add.sprite(1000,game.config.height,'slug').setOrigin(0,1).setCollideWorldBounds();
-        this.slug1.setGravityY(400);
-        //this.player.setVelocityY(4000);
-        this.slug1.setVelocityX(-100);
-        
-        this.physics.add.overlap(this.slug1, this.player, () => {
+        this.slugs = this.physics.add.group({
+            enable: true,
+            gravityY: 400,
+            velocityX: -100,
+            collideWorldBounds: true
+        });
+        this.slugs.add(this.add.sprite(700, game.config.height - 100,'slug'));
+        this.slugs.add(this.add.sprite(1000, game.config.height - 100,'slug'));
+        this.physics.add.overlap(this.slugs, this.player, () => {
             if(!this.isJumping) {
                 console.log("hit");
             }
