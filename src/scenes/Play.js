@@ -19,7 +19,7 @@ class Play extends Phaser.Scene {
         this.slug1.setVelocityX(-100);
         
         this.physics.add.overlap(this.slug1, this.player, () => {
-            if(this.isJumping) {
+            if(!this.isJumping) {
                 console.log("hit");
             }
         });
