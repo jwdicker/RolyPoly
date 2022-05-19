@@ -14,8 +14,7 @@ class Load extends Phaser.Scene {
         // Play scene
         this.load.image("player", "Assets/rolypoly.png");
         this.load.image("slug", "Assets/slug.png");
-        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', 
-        { frameWidth: 85, frameHeight: 70});
+        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', {frameWidth: 85, frameHeight: 70, startFrame: 0, endFrame: 11});
 
         // End scene
         this.load.image('victoryscreen', 'assets/victory.png');

@@ -3,12 +3,6 @@ class Play extends Phaser.Scene {
         super("play");
     }
 
-    preload(){
-        this.load.image("player", "Assets/rolypoly.png");
-        this.load.image("slug", "Assets/slug.png");
-        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', {frameWidth: 85, frameHeight: 70, startFrame: 0, endFrame: 11});
-    }
-
     create(){
 
         this.isJumping = false;
