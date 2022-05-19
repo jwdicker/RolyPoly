@@ -3,6 +3,7 @@ class Play extends Phaser.Scene {
         super("play");
     }
 
+<<<<<<< HEAD
     preload(){
         this.load.image("player", "Assets/rolypoly.png");
         this.load.image("slug", "Assets/slug.png");
@@ -14,6 +15,12 @@ class Play extends Phaser.Scene {
         this.isJumping = false;
         this.player = this.physics.add.sprite(8,0,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
         this.player.flipX = true;
+=======
+    create(){
+
+        this.isJumping = false;
+        this.player = this.physics.add.sprite(8,600,'player').setOrigin(0,0).setCollideWorldBounds();
+>>>>>>> 2633c739268e2dc9ca7c11ab13ebb3b6ab368797
         this.player.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.player.setVelocityX(100);
