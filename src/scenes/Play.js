@@ -6,18 +6,20 @@ class Play extends Phaser.Scene {
     create(){
 
         this.isJumping = false;
-        this.player = this.physics.add.sprite(8,600,'player').setOrigin(0,0).setCollideWorldBounds();
+        this.player = this.physics.add.sprite(8,game.config.height,'player').setOrigin(0,1).setCollideWorldBounds();
         this.player.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.player.setVelocityX(100);
 
-        this.slug1 =  this.physics.add.sprite(1000,600,'slug').setOrigin(0,0).setCollideWorldBounds();
+        this.slug1 =  this.physics.add.sprite(1000,game.config.height,'slug').setOrigin(0,1).setCollideWorldBounds();
         this.slug1.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.slug1.setVelocityX(-100);
         
-        this.physics.add.collider(this.slug1, this.player, () => {
-            console.log("hit");
+        this.physics.add.overlap(this.slug1, this.player, () => {
+            if(this.player.y == game.config.height) {
+                console.log("hit");
+            }
         });
 
         this.input.on("pointerdown", ()=> {
