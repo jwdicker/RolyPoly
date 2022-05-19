@@ -2,7 +2,7 @@ class End extends Phaser.Scene
 {
     constructor() 
     {
-        super("VictoryScene");
+        super("End");
     }
     create()
         {
