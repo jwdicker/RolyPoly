@@ -11,9 +11,7 @@ class Menu extends Phaser.Scene {
     }
     create() {
         console.log("menu");
-        this.input.keyboard.on("keydown-C", ()=> {
-            this.scene.launch("play");
-        })
+        
 
         // Add background
         this.add.image(0, 0, 'mainmenu').setOrigin(0, 0);

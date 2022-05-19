@@ -9,21 +9,39 @@ class Play extends Phaser.Scene {
     }
 
     create(){
-        this.player = this.physics.add.sprite(8,0,'player').setOrigin(0,0).setCollideWorldBounds();
 
-        this.player.setGravityY(1);
-        this.player.setVelocityY(4000);
+        this.isJumping = false;
+        this.player = this.physics.add.sprite(8,0,'player').setOrigin(0,0).setCollideWorldBounds();
+        this.player.setGravityY(400);
+        //this.player.setVelocityY(4000);
         this.player.setVelocityX(100);
 
         this.slug1 =  this.physics.add.sprite(1000,600,'slug').setOrigin(0,0).setCollideWorldBounds();
-        this.player.setGravityY(1);
-        this.player.setVelocityY(4000);
-        this.player.setVelocityX(-100);
+        this.slug1.setGravityY(400);
+        //this.player.setVelocityY(4000);
+        this.slug1.setVelocityX(-100);
 
-
-        this.physics.add.collider(this.slug1, this.player);
         
 
+        
+        this.physics.add.collider(this.slug1, this.player, () => {
+            console.log("hit");
+        });
+
+        this.input.keyboard.on("keydown-SPACE", ()=> {
+            if (!this.isJumping){
+                this.player.setVelocityY(-400);
+                this.isJumping = true;
+            }
+            
+        })
+
+    }
+
+    update() {
+        if (this.player.body.onFloor()){
+            this.isJumping = false;
+        }
     }
     //this.ground = this.physics.add.group({immovable: true});
 }
