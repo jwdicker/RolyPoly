@@ -61,12 +61,15 @@ class Play extends Phaser.Scene {
                 })
                 this.player.setVelocityY(-400);
                 this.isJumping = true;
-            }
-            
+            } 
         });
 
         if (this.player.body.onFloor()){
             this.isJumping = false;
+        }
+
+        if (this.player.body.blocked.right) {
+            this.scene.start("End");
         }
 
     }
