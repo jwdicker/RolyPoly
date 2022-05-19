@@ -26,6 +26,4 @@ class Play extends Phaser.Scene {
 
     }
     //this.ground = this.physics.add.group({immovable: true});
-    
-
 }
