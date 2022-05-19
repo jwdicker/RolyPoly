@@ -2,14 +2,7 @@ class Menu extends Phaser.Scene {
     constructor() {
         super("MenuScene");
     }
-    preload() {
-        this.load.image('mainmenu', 'assets/mainmenu.png');
-        this.load.image('snail', 'assets/snail.png');
-        this.load.image('rolypoly', 'assets/rolypoly.png');
-        this.load.image('handIcon', '/assets/hand_c.png');
-        this.load.image('circIcon', '/assets/circ_icon.png');
-        
-    }
+
     create() {
         console.log("menu");
         

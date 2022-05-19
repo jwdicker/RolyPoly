@@ -6,14 +6,18 @@ class Play extends Phaser.Scene {
     preload(){
         this.load.image("player", "Assets/rolypoly.png");
         this.load.image("slug", "Assets/slug.png");
-        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', 
-        { frameWidth: 85, frameHeight: 70});
+        this.load.spritesheet('poly_anim', '/assets/rolypoly_animated.png', {frameWidth: 85, frameHeight: 70, startFrame: 0, endFrame: 11});
     }
 
     create(){
 
         this.isJumping = false;
-        this.player = this.physics.add.sprite(8,0,'player').setOrigin(0,0).setCollideWorldBounds();
+        this.player = this.physics.add.sprite(8,0,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
+        this.player.flipX = true;
+    create(){
+
+        this.isJumping = false;
+        this.player = this.physics.add.sprite(8,600,'player').setOrigin(0,0).setCollideWorldBounds();
         this.player.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.player.setVelocityX(100);
@@ -28,20 +32,41 @@ class Play extends Phaser.Scene {
             console.log("hit");
         });
 
-        this.input.on("pointerdown", ()=> {
-            if (!this.isJumping){
-                this.player.setVelocityY(-400);
-                this.isJumping = true;
-            }
-            
-        })
+        this.anims.create({
+            key: 'poly_walk',
+            frames: this.anims.generateFrameNumbers('poly_anim', {start: 0, end: 4, first: 0}),
+            frameRate: 12,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'poly_jump',
+            frames: this.anims.generateFrameNumbers('poly_anim', {start: 5, end: 11, first: 5}),
+            frameRate: 12,
+            repeat: 0
+        });
+
+        this.player.anims.play('poly_walk');
 
     }
 
     update() {
+        this.input.on("pointerdown", ()=> {
+            if (!this.isJumping){
+                this.player.anims.play('poly_jump');
+                this.player.on('animationcomplete' , () => {
+                    this.player.anims.play('poly_walk');
+                })
+                this.player.setVelocityY(-400);
+                this.isJumping = true;
+            }
+            
+        });
+
         if (this.player.body.onFloor()){
             this.isJumping = false;
         }
+
     }
     //this.ground = this.physics.add.group({immovable: true});
 }
