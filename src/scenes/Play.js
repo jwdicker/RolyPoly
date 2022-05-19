@@ -14,8 +14,6 @@ class Play extends Phaser.Scene {
         this.isJumping = false;
         this.player = this.physics.add.sprite(8,0,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
         this.player.flipX = true;
-    create(){
-
         this.isJumping = false;
         this.player = this.physics.add.sprite(8,600,'player').setOrigin(0,0).setCollideWorldBounds();
         this.player.setGravityY(400);
