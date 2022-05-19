@@ -1,4 +1,4 @@
-class Victory extends Phaser.Scene 
+class End extends Phaser.Scene 
 {
     constructor() 
     {

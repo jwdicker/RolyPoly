@@ -2,7 +2,7 @@ let config = {
     type: Phaser.CANVAS,
     width: 1366,
     height: 768,
-    scene: [Load, Menu, Play, Victory, Lose],
+    scene: [Load, Menu, Play, End],
     highscore: 0,
     currentScore: 0,
     physics: {
