@@ -8,6 +8,7 @@ class Menu extends Phaser.Scene {
         this.load.image('rolypoly', 'assets/rolypoly.png');
         this.load.image('handIcon', '/assets/hand_c.png');
         this.load.image('circIcon', '/assets/circ_icon.png');
+        
     }
     create() {
         console.log("menu");

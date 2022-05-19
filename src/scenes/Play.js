@@ -6,6 +6,8 @@ class Play extends Phaser.Scene {
     preload(){
         this.load.image("player", "Assets/rolypoly.png");
         this.load.image("slug", "Assets/slug.png");
+        this.add.spritesheet('poly_anim', '/assets/rolypoly_animated.png', 
+        { frameWidth: 85, frameHeight: 70});
     }
 
     create(){
