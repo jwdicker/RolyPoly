@@ -20,15 +20,12 @@ class Play extends Phaser.Scene {
         this.slug1.setGravityY(400);
         //this.player.setVelocityY(4000);
         this.slug1.setVelocityX(-100);
-
-        
-
         
         this.physics.add.collider(this.slug1, this.player, () => {
             console.log("hit");
         });
 
-        this.input.keyboard.on("keydown-SPACE", ()=> {
+        this.input.on("pointerdown", ()=> {
             if (!this.isJumping){
                 this.player.setVelocityY(-400);
                 this.isJumping = true;
