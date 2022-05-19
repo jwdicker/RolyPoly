@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, game.config.width, game.config.height, "background").setOrigin(0);
 
         this.isJumping = false;
-        this.player = this.physics.add.sprite(8,0,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
+        this.player = this.physics.add.sprite(8,game.config.height - 200,'poly_anim').setOrigin(0,0).setCollideWorldBounds();
         this.player.flipX = true;
         this.isJumping = false;
         this.player.setGravityY(400);
@@ -24,7 +24,13 @@ class Play extends Phaser.Scene {
         this.slugs.add(this.add.sprite(1000, game.config.height - 100,'slug'));
         this.physics.add.overlap(this.slugs, this.player, () => {
             if(!this.isJumping) {
-                console.log("hit");
+                this.player.setVelocityX(0);
+                this.player.anims.stop();
+                this.slugs.setVelocityX(0);
+                this.time.delayedCall(1000, () => {
+                    this.scene.start("MenuScene");
+                })
+                
             }
         });
 
