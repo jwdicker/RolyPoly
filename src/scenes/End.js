@@ -22,7 +22,7 @@ class End extends Phaser.Scene
             this.returnToToTitle = this.add.text(game.config.width/2, game.config.height/2, "Click here to restart", textConfig).setOrigin(0.5);
             this.returnToToTitle.setActive();
             this.returnToToTitle.on("pointerdown", () => {
-                this.play("Level1Scene");
+                this.play("Menu");
             });
         }
 }
