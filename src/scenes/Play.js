@@ -1,3 +1,33 @@
+class Play extends Phaser.Scene {
+    constructor() {
+        super("play");
+    }
+
+    preload(){
+        this.load.image("player", "Assets/rolypoly.png");
+        this.load.image("slug", "Assets/slug.png");
+    }
+
+    create(){
+        this.player = this.physics.add.sprite(8,0,'player').setOrigin(0,0).setCollideWorldBounds();
+
+        this.player.setGravityY(1);
+        this.player.setVelocityY(4000);
+        this.player.setVelocityX(100);
+
+        this.slug1 =  this.physics.add.sprite(1000,600,'slug').setOrigin(0,0).setCollideWorldBounds();
+        this.player.setGravityY(1);
+        this.player.setVelocityY(4000);
+        this.player.setVelocityX(-100);
+
+
+        this.physics.add.collider(this.slug1, this.player);
+        
+
+    }
+    //this.ground = this.physics.add.group({immovable: true});
+}
+
 class Level1 extends Phaser.Scene 
 {
     constructor() 
