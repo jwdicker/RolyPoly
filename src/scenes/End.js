@@ -6,7 +6,7 @@ class End extends Phaser.Scene
     }
     create()
         {
-            this.textConfig = {
+            let textConfig = {
                 fontFamily: 'Georgia',
                 fontSize: '40px',
                 //backgroundColor: '#AA11AA',
