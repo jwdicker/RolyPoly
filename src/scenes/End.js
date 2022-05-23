@@ -21,7 +21,7 @@ class End extends Phaser.Scene
             this.victoryText = this.add.text(game.config.width/2, game.config.height/2, "Victory", textConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2, "Click to restart", textConfig).setOrigin(0.5);
             this.input.on("pointerdown", () => {
-                this.play("Menu");
+                this.scene.start("Menu");
             });
         }
 }
